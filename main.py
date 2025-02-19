@@ -25,6 +25,10 @@ async def get_category(category: str):
     return nutrition.search_by_category(category)
 
 
+@app.get("/meals/{mealid}")
+async def get_meal_categories(mealid: int):
+    return nutrition.search_by_meal_id(mealid)
+
 @app.get("/area/")
 async def get_areas():
     return nutrition.all_areas()

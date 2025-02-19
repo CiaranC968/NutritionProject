@@ -25,6 +25,9 @@ class MealDBClient:
     def search_by_category(self, category):
         return self._get(f"filter.php?c={category}")
 
+    def search_by_meal_id(self, mealid):
+        return self._get(f"lookup.php?i={mealid}")
+
     def all_categories(self):
         return self._get("list.php?c=list")
 
@@ -36,3 +39,4 @@ class MealDBClient:
 
     def meal_categories(self):
         return self._get("categories.php")
+
