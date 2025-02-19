@@ -15,6 +15,12 @@ async def get_by_ingredient(ingredient: str):
     return nutrition.search_by_ingredient(ingredient)
 
 
+@app.get("/ingredients/id/{ingredient}")
+async def get_by_ingredient(ingredient: int):
+    return nutrition.categories_by_id(ingredient)
+
+
+
 @app.get("/area/{area}")
 async def get_area(area: str):
     return nutrition.search_by_area(area)

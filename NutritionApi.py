@@ -40,3 +40,12 @@ class MealDBClient:
     def meal_categories(self):
         return self._get("categories.php")
 
+    def categories_by_id(self, ingredient_id):
+        data = self.all_ingredients()
+
+        if data and "meals" in data:  # Ensure valid response
+            for ingredient in data["meals"]:
+                if ingredient["idIngredient"] == str(ingredient_id):
+                    return ingredient
+        return None
+
