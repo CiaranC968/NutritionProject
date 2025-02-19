@@ -10,7 +10,7 @@ class MealDBClient:
         """Helper method to handle API requests with error handling."""
         try:
             response = self.session.get(f"{self.BASE_URL}{endpoint}")
-            response.raise_for_status()  # Raise error for bad responses (4xx, 5xx)
+            response.raise_for_status()
             return response.json()
         except requests.RequestException as e:
             print(f"API request failed: {e}")
@@ -33,3 +33,6 @@ class MealDBClient:
 
     def all_ingredients(self):
         return self._get("list.php?i=list")
+
+    def meal_categories(self):
+        return self._get("categories.php")

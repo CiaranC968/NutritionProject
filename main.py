@@ -38,3 +38,7 @@ async def get_categories():
 async def get_categories():
     return nutrition.all_ingredients()
 
+@app.get("/meals/")
+async def get_meal_categories():
+    return nutrition.meal_categories()
+
