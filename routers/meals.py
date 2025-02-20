@@ -15,3 +15,8 @@ async def get_meal_categories():
 @mrouter.get("/{mealid}", summary="Get category")
 async def get_meal_categories(mealid: int):
     return nutrition.search_by_meal_id(mealid)
+
+@mrouter.get("/{category}", summary="Meals by category")
+async def get_category(category: str):
+    return nutrition.search_by_category(category)
+

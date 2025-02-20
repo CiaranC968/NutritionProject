@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 import uvicorn
-from routers.categories import crouter
 from routers.ingredients import irouter
 from routers.areas import arouter
 from routers.meals import mrouter
@@ -16,7 +15,6 @@ app = FastAPI(
 app.include_router(irouter)
 app.include_router(arouter)
 app.include_router(mrouter)
-app.include_router(crouter)
 
 # Root endpoint
 @app.get("/", summary="Welcome page", include_in_schema=False)
