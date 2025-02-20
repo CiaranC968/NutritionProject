@@ -15,15 +15,15 @@ uvicorn main:app --host 127.0.0.1 --port 8000 --reload
 
 ## 📚 API Endpoints
 
-| Method | Endpoint                  | Description                     |
-|--------|---------------------------|---------------------------------|
-| GET    | `/`                        | Welcome message                 |
-| GET    | `/ingredients/`            | List all ingredients            |
+| Method | Endpoint                    | Description                     |
+|--------|-----------------------------|---------------------------------|
+| GET    | `/`                         | Welcome message                 |
+| GET    | `/ingredients/`             | List all ingredients            |
 | GET    | `/ingredients/{ingredient}` | Search meals by ingredient      |
 | GET    | `/ingredients/id/{id}`      | Get ingredient by ID            |
-| GET    | `/categories/`             | List all categories             |
-| GET    | `/categories/{category}`    | Search meals by category        |
-| GET    | `/areas/`                  | List all areas (cuisines)       |
-| GET    | `/areas/{area}`            | Search meals by area            |
-| GET    | `/meals/{meal_id}`         | Get meal details by ID          |
+| GET    | `/categories/`              | List all categories             |
+| GET    | `/areas/`                   | List all areas (cuisines)       |
+| GET    | `/areas/{area}`             | Search meals by area            |
+| GET    | `/meals/{meal_id}`          | Get meal details by ID          |
+| GET    | `/meals/{category}`         | Search meals by category        |
 
