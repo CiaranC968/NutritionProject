@@ -1,54 +1,33 @@
 from fastapi import FastAPI
-from NutritionApi import MealDBClient
+import uvicorn
+from routers.categories import crouter
+from routers.ingredients import irouter
+from routers.areas import arouter
+from routers.meals import mrouter
 
+# Initialize FastAPI app
+app = FastAPI(
+    title="Nutrition API",
+    description="An API to fetch meal information, ingredients, areas, and categories.",
+    version="1.0.0"
+)
 
-nutrition = MealDBClient()
+# Include routers for different API sections
+app.include_router(irouter)
+app.include_router(arouter)
+app.include_router(mrouter)
+app.include_router(crouter)
 
-app = FastAPI()
-
-@app.get("/")
+# Root endpoint
+@app.get("/", summary="Welcome page", include_in_schema=False)
 async def root():
-    return ("Hello, Welcome to My Nutrition Api")
+    """Returns a welcome message for the API."""
+    return {"message": "Hello, Welcome to My Nutrition API. This is the starting page."}
 
-@app.get("/ingredients/{ingredient}")
-async def get_by_ingredient(ingredient: str):
-    return nutrition.search_by_ingredient(ingredient)
-
-
-@app.get("/ingredients/id/{ingredient}")
-async def get_by_ingredient(ingredient: int):
-    return nutrition.categories_by_id(ingredient)
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
 
 
 
-@app.get("/area/{area}")
-async def get_area(area: str):
-    return nutrition.search_by_area(area)
 
-
-@app.get("/categories/{category}")
-async def get_category(category: str):
-    return nutrition.search_by_category(category)
-
-
-@app.get("/meals/{mealid}")
-async def get_meal_categories(mealid: int):
-    return nutrition.search_by_meal_id(mealid)
-
-@app.get("/area/")
-async def get_areas():
-    return nutrition.all_areas()
-
-@app.get("/categories/")
-async def get_categories():
-    return nutrition.all_categories()
-
-
-@app.get("/ingredients/")
-async def get_categories():
-    return nutrition.all_ingredients()
-
-@app.get("/meals/")
-async def get_meal_categories():
-    return nutrition.meal_categories()
 
