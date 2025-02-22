@@ -3,42 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Areas</title>
+    <title>Ingredient List</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="hero">
         <div class="hero-content">
-            <h1>Explore Meal Areas</h1>
+            <h1>Explore Ingredients</h1>
             <a href="index.html" class="cta-button">Go Back</a>
         </div>
     </header>
 
     <main>
-        <section id="areas-table" class="features">
-            <h2>Meal Areas</h2>
+        <section id="ingredients-table" class="features">
+            <h2>Ingredient List</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Area</th>
+                        <th>Ingredient</th>
                     </tr>
                 </thead>
                 <tbody id="tableBody">
-                </tbody>
+                    </tbody>
             </table>
         </section>
 
-        <div id="mealModal" class="modal">
+        <div id="ingredientModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <div id="modalContent"></div>
+                <div id="modalContent">
+                    </div>
             </div>
         </div>
 
     </main>
 
     <footer>
-        <p>&copy; 2023 Meal Area Explorer</p>
+        <p>&copy; 2023 Ingredient Explorer</p>
     </footer>
-    <script src="areas.js"></script>  </body>
+
+    <script src="ingredients.js"></script>
+</body>
 </html>
