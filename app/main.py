@@ -3,7 +3,7 @@ import uvicorn
 from starlette.middleware.cors import CORSMiddleware
 
 from routers.ingredients import irouter
-from routers.areas import arouter
+from routers import arouter
 from routers.meals import mrouter
 
 # Initialize FastAPI app
