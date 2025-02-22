@@ -1,0 +1,77 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left; /* Default text alignment to left */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+img {
+    max-width: 50px;
+    height: auto;
+    display: block; /* Prevents small vertical alignment issues with images */
+    margin: 0 auto; /* Center the image in the cell */
+}
+
+h1 {
+    color: rgb(16, 16, 33);
+    text-align: center; /* Center the heading */
+}
+
+/* Optional: Style the error message */
+td.error {
+    color: red;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less */
+    max-width: 600px; /* Limit the maximum width */
+    position: relative; /* For positioning the close button */
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Style the image within the modal */
+.modal-content img {
+    max-width: 100%; /* Make image responsive */
+    height: auto;
+    display: block; /* Prevents small vertical alignment issues */
+    margin: 0 auto; /* Center the image */
+}

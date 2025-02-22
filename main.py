@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
+from starlette.middleware.cors import CORSMiddleware
+
 from routers.ingredients import irouter
 from routers.areas import arouter
 from routers.meals import mrouter
@@ -9,6 +11,14 @@ app = FastAPI(
     title="Nutrition API",
     description="An API to fetch meal information, ingredients, areas, and categories.",
     version="1.0.0"
+)
+
+app.add_middleware(
+  CORSMiddleware,
+  allow_origins=["*"],  # In production, replace "*" with a list of allowed origins.
+  allow_credentials=True,
+  allow_methods=["*"],
+  allow_headers=["*"],
 )
 
 # Include routers for different API sections
