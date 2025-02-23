@@ -101,14 +101,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function closeModal() {
-        ingredientModal.style.display = 'none';
+        mealModal.style.display = 'none';
     }
 
      document.querySelector('.close').addEventListener('click', closeModal);
 
 
     window.addEventListener('click', function (event) {
-        if (event.target === ingredientModal) {
+        if (event.target === mealModal) {
             closeModal();
         }
     });
