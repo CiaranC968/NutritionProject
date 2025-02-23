@@ -6,6 +6,12 @@ body, h1, h2, h3, p, a {
     color: inherit;
 }
 
+tr:hover {
+    background-color: aqua;
+}
+
+
+
 /* Body styling */
 body {
     font-family: Arial, sans-serif;
@@ -15,18 +21,23 @@ body {
     margin: 0;
 }
 
-/* Hero Section */.hero {
-    background-image: url('hero-image.jpg'); /* Replace with your actual image */
+/* Hero Section */
+.hero {
+    background-image: url('../images/hero-image.jpg'); /* Replace with your actual image */
     background-size: cover;
     background-position: center;
     color: #fff;
     text-align: center;
     padding: 100px 20px;
-}.hero-content {
+}
+
+.hero-content {
     background: rgba(0, 0, 0, 0.5);
     display: inline-block;
     padding: 20px;
-}.cta-button {
+}
+
+.cta-button {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
@@ -34,7 +45,9 @@ body {
     color: #fff;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-}.cta-button:hover {
+}
+
+.cta-button:hover {
     background-color: #218838;
 }
 
@@ -43,31 +56,43 @@ main {
     padding: 20px;
 }
 
-/* Features Section */.features {
+/* Features Section */
+.features {
     background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}.feature-item {
+}
+
+.feature-item {
     margin-bottom: 20px;
-}.feature-item h3 {
+}
+
+.feature-item h3 {
     margin-bottom: 10px;
     color: #28a745;
 }
 
-/* Testimonials Section */.testimonials {
+/* Testimonials Section */
+.testimonials {
     padding: 20px;
-}.testimonial-item {
+}
+
+.testimonial-item {
     background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
     border-left: 5px solid #28a745;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}.testimonial-item p {
+}
+
+.testimonial-item p {
     font-style: italic;
-}.testimonial-item cite {
+}
+
+.testimonial-item cite {
     display: block;
     margin-top: 10px;
     text-align: right;
@@ -80,9 +105,8 @@ footer {
     padding: 10px;
     background-color: #28a745;
     color: #fff;
-    /* Consider removing position:fixed or using position:relative with bottom margin */
-    width: 100%;
-    bottom: 0;
+    width: 100%; /* Ensure footer takes full width */
+    bottom: 0; /* Changed to bottom: 0 for standard flow */
 }
 
 /* Table Styling */
@@ -104,7 +128,7 @@ th {
 
 /* Image Styling */
 img {
-    max-width: 50px;
+    max-width: 100%; /* Images should be responsive within containers */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -121,7 +145,7 @@ td.error {
     color: red;
 }
 
-/* Modal Styles */.modal {
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -131,15 +155,22 @@ td.error {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
-}.modal-content {
+}
+
+.modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto; /* Adjusted margin for better centering */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
+    width: 80%; /* Could make this smaller or use max-width */
+    max-width: 900px;
     position: relative;
-}.close {
+    text-align: center;
+    border-radius: 5px; /* Add rounded corners */
+}
+
+
+.close {
     position: absolute;
     top: 10px;
     right: 20px;
@@ -147,12 +178,45 @@ td.error {
     font-weight: bold;
     color: #000;
     cursor: pointer;
-}.modal-content img {
+}
+
+.modal-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax as needed */
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.modal-images div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px; /* Rounded corners for meal containers */
+}
+
+.modal-images img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto;
+    border-radius: 5px; /* Rounded corners for images */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Add a subtle shadow */
 }
 
+.modal-images h3 {
+    margin-bottom: 5px;
+    color: #333; /* Darker title color */
+}
 
+/* Responsive adjustments (example) */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+    }
 
+    .modal-images {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller columns on smaller screens */
+    }
+}
